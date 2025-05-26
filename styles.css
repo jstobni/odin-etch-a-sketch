@@ -2,6 +2,18 @@
     font-family: Roboto;
  }
 
+.bodycontainer {
+    display: flex;
+}
+
+.navbar {
+    flex: 1;
+}
+
+.gridcontainer {
+    flex: 4;
+}
+
 .container {
     margin: auto;
     display: flex;
