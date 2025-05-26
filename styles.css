@@ -1,11 +1,28 @@
+ body {
+    font-family: Roboto;
+ }
+
 .container {
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    width: 288px;
-    height: 288px;
+    width: 680px;
+    height: 680px;
 }
 
 .row {
     border: 1px solid black;
-    flex: 1 1 16px;
+    flex: 1 1 58px;
+}
+
+.input {
+    height: 30px;
+    border-radius: 15px;
+}
+
+.btn {
+    background-color: cornflowerblue;
+    color: azure;
+    height: 30px;
+    border-radius: 15px;
 }
