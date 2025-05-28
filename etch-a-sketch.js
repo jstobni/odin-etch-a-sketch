@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
         makeGrid(newSize)
     });
 
+    // Add listener to erase button
+    let eraseButton = document.querySelector('#erase');
+    eraseButton.addEventListener('click', function(event) {
+        let size = document.querySelector('#size').value;
+        removeGrid();
+        makeGrid(size);
+    });
+
     const slider = document.querySelector('#size');
     const output = document.querySelector('#sizedisplay');
     output.innerHTML = `${slider.value} x ${slider.value}`;
