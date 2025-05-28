@@ -8,14 +8,22 @@
     <script src="etch-a-sketch.js"></script>
 </head>
 <body>
+    <h1 class="heading">Etch-A-Sketch</h1>
     <div class="bodycontainer">
         <div class="navbar">
             <div class="formcontainer"> 
                 <form id="resize">
                     <p class="formtitle">Resize the grid!</p>
-                    <input id="size" class="input" type="number" min="2" max="50">
+                    <p class="sliderheading"><span id="sizedisplay"></span></p>
+                    <div class="inputslidercontainer">
+                        <input id="size" class="inputslider" type="range" min="2" max="50" value="16">
+                    </div>
                     <button class="btn" type="submit">Resize</button>
                 </form>
+            </div>
+            <div class="erasecontainer">
+                <p class="formtitle">Erase the grid!</p>
+                <button id="erase" class="btn">Erase</button>
             </div>
         </div>
         <div class="gridcontainer">

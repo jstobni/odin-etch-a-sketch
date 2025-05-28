@@ -10,13 +10,22 @@ document.addEventListener('DOMContentLoaded', function() {
         removeGrid();
         makeGrid(newSize)
     });
+
+    const slider = document.querySelector('#size');
+    const output = document.querySelector('#sizedisplay');
+    output.innerHTML = `${slider.value} x ${slider.value}`;
+
+    slider.oninput = function() {
+        output.innerHTML = `${slider.value} x ${slider.value}`;
+    }
+
 });
 
 function makeGrid(size) {
     const grid = document.querySelector('#grid')
     
-    // Calculate square size (with 2px total border)
-    let squareSize = (680 - (size * 2)) / size;
+    // Calculate square size
+    let squareSize = 500 / size;
 
     // Place as many rows as the size says
     for (let col = 0; col < size; col++) {
@@ -25,7 +34,18 @@ function makeGrid(size) {
             square.className = 'row';
             square.style = `flex: 1 1 ${squareSize}px;`
             square.addEventListener('mouseenter', function(event) {
+                // Change background color to black
                 event.target.style.backgroundColor = 'black'
+                if (!event.target.style.opacity) {
+                    event.target.style.opacity = '.20'
+                }
+                else if (event.target.style.opacity < 1){
+                    // Darken by 10% opacity
+                    let currentOpacity = window.getComputedStyle(event.target).getPropertyValue("opacity");
+                    let opacity = Number(currentOpacity) + Number(.10);
+                    event.target.style.opacity = `${opacity}`
+                }
+
             });
             grid.appendChild(square)
         }
